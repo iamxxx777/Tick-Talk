@@ -1,0 +1,84 @@
+.message-form {
+    width: 100%;
+    padding: 0 0.7rem;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+}
+
+.message-form form small {
+    color: #D8000C;
+}
+
+.new-message {
+    width: 100%;
+    position: relative;
+    padding: 3px;
+    background-color: #3C393F;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(224, 224, 224, 0.3),
+                0 -1px 3px rgb(224, 224, 224, 0.3);
+}
+
+.new-message textarea {
+    background-color: transparent;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    border: none;
+    outline: none;
+    letter-spacing: -0.035em;
+    color: #E0E0E0;
+    height: 45px;
+    width: 100%;
+    padding-top: 3px;
+    padding-left: 0.8rem;
+    padding-right: 50px;
+    resize: none;
+}
+
+.new-message textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.new-message input::placeholder {
+    color: #828282;
+}
+
+.new-message button {
+    width: 39.34px;
+    height: 39.34px;
+    background: #2D9CDB;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.new-message button i {
+    transform: rotate(60deg);
+}
+
+.new-message button .spin {
+    animation: animate infinite 0.6s linear;
+    transform: rotate(0deg);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    } 100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (min-width: 768px) {
+    .message-form {
+        padding: 0 2rem;
+        bottom: 0.6rem;
+    }
+}

@@ -1,0 +1,257 @@
+.edit-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+}
+
+.prof {
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.back {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #2D9CDB;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.back i {
+    margin-right: 8px;
+}
+
+.profile_edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.profile_edit > h1 {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.profile_edit > h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+}
+
+.profile_info {
+    width: 100%;
+}
+
+.profile_info form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    width: 100%;
+}
+
+.profile_info .form {
+    padding-top: 0;
+}
+
+.profile_info form small {
+    color: #eb5757;
+    /* background-color: rgba(235, 87, 87, 0.3); */
+    padding: 0.4rem;
+    font-size: 13px;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    text-align: left;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.form_img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form_img_div {
+    margin-right: 20px;
+    position: relative;
+    width: 52px;
+    height: 48px;
+}
+
+.form_img_div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.form_img_div button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+.form_img_div input {
+display: none;
+}
+
+.img_text p {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #E0E0E0;
+    text-transform: uppercase;
+}
+
+.profile_edit .form_control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.profile_edit .form_control label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #BDBDBD;
+    margin-bottom: 0.2rem;
+}
+
+.profile_edit .form_control input,
+.profile_edit .form_control textarea {
+    width: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #a0a0a0;
+    outline: none;
+    font-family: inherit;
+    height: 48px;
+    padding: 0 1rem;
+    background-color: transparent;
+}
+
+.form_control input::placeholder,
+.form_control textarea::placeholder {
+    font-size: 13px;
+}
+
+.form_control textarea {
+    height: 92px;
+    padding: 1rem;
+    resize: none;
+}
+
+.profile_info form > button {
+    width: 82px;
+    height: 38px;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+    background: #2F80ED;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 1.5rem;
+}
+
+
+
+@media (min-width: 480px) {
+    .profile_edit {
+        padding: 0 1rem;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .container {
+        padding: 1rem 3rem;
+    }
+
+    .profile, .footer {
+        width: 540px;
+        margin: 0 auto;
+    }
+
+    .profile_edit {
+        border: solid 1px #616161;
+        border-radius: 8px;
+        padding: 0 2rem;
+        margin-bottom: 1rem;
+        padding-top: 1.5rem;
+    }
+
+    .prof .footer {
+        width: 100%;
+    }
+
+    .profile_info form {
+        padding-top: 2rem;
+    }
+
+    .profile_info .form_control input,
+    .profile_info .form_control textarea {
+        width: 412px;
+    }
+
+    .form_control input:focus,
+    .form_control textarea:focus {
+        border-color: #2F80ED;
+    }
+
+    .profile_info form > button {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+@media (min-width: 900px) {
+    .profile_edit, .back {
+        width: 750px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .prof .footer {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+

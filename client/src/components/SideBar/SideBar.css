@@ -1,0 +1,32 @@
+.sidebar {
+    background-color: #120F13;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    max-width: 300px;
+    width: 100%;
+    transform: translateX(-310px);
+    z-index: 5;
+}
+
+
+.show-sidebar {
+    display: initial;
+    transform: translateX(0);
+}
+
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: initial;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        position: relative;
+        transform: translateX(0);
+    }
+}
+
+

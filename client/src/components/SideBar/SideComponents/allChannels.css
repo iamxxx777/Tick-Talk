@@ -1,0 +1,125 @@
+.channels-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+    padding: 0.85rem 1.3rem;
+}
+
+.channels-head h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    color: #E0E0E0;
+}
+
+.channels-head button {
+    width: 25px;
+    height: 25px;
+    background: #252329;
+    color: #FFF;
+    border-radius: 8px;
+}
+
+.channels-head-buttons button:nth-child(1) {
+    margin-right: 7px;
+}
+
+.channels-head-buttons .side-close {
+    color: #db0812;
+    width: 25px;
+    height: 25px;
+    background: rgba(219, 8, 18, 0.3);
+    border: none;
+    font-size: 18px;
+    padding-bottom: 2px;
+}
+
+.channels {
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.channels form {
+    width: 100%;
+    position: relative;
+    height: 48px;
+    margin-bottom: 2rem;
+}
+
+.channels form input {
+    background: #3C393F;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding-left: 40px;
+    padding-right: 10px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #E0E0E0;
+}
+
+.channels form input::placeholder {
+    color: #828282;
+}
+
+.channels form button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+}
+
+.channel-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #BDBDBD;
+    margin-top: 0.8rem;
+}
+
+.channel-item div {
+    width: 38px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252329;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.channel-item h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    margin-left: 8px;
+}
+
+@media (min-width: 1000px) {
+    .channel-item h3 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .side-close {
+        display: none;
+    }
+    .channel-item h3 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

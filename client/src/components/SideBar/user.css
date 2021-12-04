@@ -1,0 +1,126 @@
+.side-user {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0B090C;
+}
+.user {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 1rem;
+}
+
+.user_info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user_info img {
+    width: 32px;
+    height: 34px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.name h3 {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.035em;
+    margin-left: 10px;
+}
+
+.drop {
+    position: relative;
+}
+
+.drop button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+    color: inherit;
+    transform: rotate(0deg);
+    transition: 0.4s ease-in;
+    width: 100%;
+}
+
+.drop .active {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 40px;
+    left: -150px;
+    background: #252329;
+    border: 1px solid #3C393F;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 0.4rem;
+    width: 168px;
+    z-index: 1;
+    transition: 0.4s ease-in;
+}
+
+.drop-show {
+    transform: translateY(-180px);
+}
+
+.dropdown ul li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.dropdown ul li div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.dropdown ul li div i {
+    margin-right: 10px;
+}
+
+.dropdown ul hr {
+    color: #BDBDBD;
+    margin: 5px 0;
+}
+
+.dropdown ul li div p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.dropdown ul .logout {
+    padding: 0.4rem;
+    color: #EB5757;
+    width: 100%;
+}
+
+
+@media (min-width: 700px) {
+    .name {
+        display: initial;
+    }
+    .dropdown ul .logout button div:hover {
+        background-color: #EB5757;
+        color: #fff;
+    }
+    .dropdown ul .logout:hover {
+        background-color: #EB5757;
+        color: #fff;
+    }
+    .dropdown ul li div:hover {
+        background: #3C393F;
+    }
+}

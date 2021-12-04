@@ -1,0 +1,33 @@
+{
+  "name": "sayhola",
+  "version": "1.0.0",
+  "description": "Chat Application built using react and express, powered by socket.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client"
+  },
+  "keywords": [
+    "React",
+    "Express",
+    "Socket.io",
+    "MongoDB"
+  ],
+  "author": "Dayo-ajobiewe Hope",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^1.27.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "socket.io": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
