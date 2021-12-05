@@ -1,5 +1,5 @@
 {
-  "name": "tick talk",
+  "name": "tick_talk",
   "version": "1.0.0",
   "description": "Chat Application built using react and express, powered by socket.io",
   "main": "server.js",
