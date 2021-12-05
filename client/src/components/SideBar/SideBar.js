@@ -7,7 +7,7 @@ import Channel from './SideComponents/Channel'
 
 import "./SideBar.css"
 
-const SideBar = ({ toggle, close, channels, channel, showModal }) => {
+const SideBar = ({ toggle, close, channels, members, channel, showModal }) => {
 
     const [view, setView] = useState(true);
 
@@ -15,7 +15,7 @@ const SideBar = ({ toggle, close, channels, channel, showModal }) => {
         <div className={`sidebar ${toggle && "show-sidebar"}`}>
             <div className="side-container">
                 {!view && <AllChannels channels={channels} close={close} click={() => setView(view)} showModal={showModal} />}
-                {view && <Channel channel={channel} close={close} click={() => setView(!view)} />}
+                {view && <Channel members={members} channel={channel} close={close} click={() => setView(!view)} />}
             </div>
             <User />
         </div>

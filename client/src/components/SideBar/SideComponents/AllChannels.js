@@ -4,6 +4,10 @@ import "./allChannels.css"
 
 const AllChannels = ({ click, close, showModal, channels }) => {
 
+    const disableForm = {
+        pointerEvents: "none"
+    }
+
     return (
         <div className="all-channels">
             <div className="channels-head">
@@ -15,11 +19,11 @@ const AllChannels = ({ click, close, showModal, channels }) => {
             </div>
             <div className="channels">
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <input type="text" name="search" placeholder="search..." required />
+                    <input style={disableForm} type="text" name="search" placeholder="search..." required />
                     <button><i className="fa fa-search" aria-hidden="true"></i></button>
                 </form>
                 <div className="channels-list">
-                    {channels.map((channel, i) => <ChannelItem key={i} channel={channel} />)}
+                    {channels.map((channel, i) => <ChannelItem key={i} click={click} channel={channel} />)}
                 </div>
             </div>
         </div>

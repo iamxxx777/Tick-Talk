@@ -24,6 +24,7 @@ const WelcomeScreen = () => {
     const [channel, setChannel] = useState({});
     const [channels, setChannels] = useState([]);
     const [messages, setMessages] = useState([]);
+    const [members, setMembers] = useState([]);
     const [modal, setModal] = useState(false);
 
     const fetchChannels = async () => {
@@ -41,6 +42,7 @@ const WelcomeScreen = () => {
             const { data } = await axios.get(`/api/channels/${welcomeId}`);
             setChannel(data)
             setMessages(data.messages)
+            setMembers(data.members)
             setLoading(false)
         } catch (error) {
             setError(true)
@@ -70,6 +72,12 @@ const WelcomeScreen = () => {
     }, [messages, socket]);
 
     useEffect(() => {
+        socket.on('new user', (user) => {
+            setMembers([...members, user])
+        })
+    }, [members, socket])
+
+    useEffect(() => {
         socket.connect();
         socket.emit('join channel', welcomeId);
         return () => {
@@ -94,7 +102,7 @@ const WelcomeScreen = () => {
                 error ? <Error /> :
                 <>
                     <div className="chat">
-                        <SideBar channels={channels} channel={channel} close={() => setShow(false)} toggle={show} showModal={showModal} />
+                        <SideBar channels={channels} channel={channel} members={members} close={() => setShow(false)} toggle={show} showModal={showModal} />
                         <Chats messages={messages} name={channel?.name} welcomeId={welcomeId} base={baseRef} toggle={() => setShow(true)} />
                     </div>
                     {modal && <Modal click={() => setModal(false)} />}

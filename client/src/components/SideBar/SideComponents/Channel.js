@@ -2,7 +2,7 @@ import Member from "./Member"
 
 import "./channel.css"
 
-const Channel = ({ click, close, channel }) => {
+const Channel = ({ click, close, members, channel }) => {
     return (
         <div className="channel">
             <div className="channel-head">
@@ -20,7 +20,7 @@ const Channel = ({ click, close, channel }) => {
                 <div className="channel-members">
                     <h2>Members</h2>
                     <div className="members">
-                        {channel.members?.map((member, i) => <Member key={i} data={member} />)}
+                        {members.map((member, i) => <Member key={i} data={member} />)}
                     </div>
                 </div>
             </div>

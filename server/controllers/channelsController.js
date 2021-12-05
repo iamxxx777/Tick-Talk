@@ -19,7 +19,7 @@ const createChannel = async (req, res) => {
             await newChannel.save();
     
             const channel = await newChannel.populate("members", "name photo" )
-    
+            
             res.status(200).json(channel);      
         }
     } catch(error) {
@@ -40,7 +40,6 @@ const getChannel = async (req, res) => {
                                 .populate('messages');            
         
             const channel = await Profile.populate(data, { path: "messages.sender" });
-
             res.status(200).json(channel);
         }
         

@@ -21,7 +21,10 @@ const MessageForm = ({ welcomeId }) => {
             setLoading(true)
             const message = { uid: currentUser.uid, currentChannel: welcomeId ? welcomeId : id, msg };
             const { data } = await axios.post("/api/messages", message);
-            socket.emit("message", {channel: data.channel, message: data});
+            socket.emit("message", {channel: data.channel, message: data.message});
+
+            if(data.user) socket.emit("new user", {channel: data.channel, user: data.user});
+
             setMsg("")
             setLoading(false)
         } catch (error) {

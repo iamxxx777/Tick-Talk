@@ -21,7 +21,7 @@ const Modal = ({click}) => {
             }
 
             setLoading(true);
-
+            socket.connect();
             const { data } = await axios.post("/api/channels", details);
             socket.emit("created channel", data);
 

@@ -54,7 +54,6 @@ const updateProfile = async (req, res) => {
 
         Profile.findByIdAndUpdate(id, {$set: data}, {new: true}, (err, doc) => {
             if(err) {
-              console.error(err);
               res.status(500).json({error: "Server Error"});
             } else {
                 res.json({success: true});
@@ -62,7 +61,7 @@ const updateProfile = async (req, res) => {
         });
 
     } catch(error) {
-        res.status(500).json({err: "Server Error"});
+        res.status(500).json({error: "Server Error"});
     }
 }
 
@@ -94,7 +93,6 @@ const updateImage = async (req, res) => {
 
         Profile.findByIdAndUpdate(data.id, {photo: newData.image, cloudId: newData.cloudId}, {new: true}, (err, doc) => {
               if(err) {
-                console.error(err);
                 res.status(500).json({error: "Server Error"});
               } else {
                   res.json({success: true, url: newData.image});

@@ -11,7 +11,7 @@ const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
         origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
+        methods: ["GET", "POST", "PUT"]
     }
 });
 
@@ -22,13 +22,15 @@ io.on('connection', (socket) => {
 
     socket.on("leave channel", (channel) => {
         socket.leave(channel);
-        
     });
 
     socket.on("message", (data) => {
-        io.to(data?.channel).emit('message', data?.message);
-        
+        io.to(data?.channel).emit('message', data?.message);    
     });
+
+    socket.on("new user", (data) => {
+        io.to(data?.channel).emit('new user', data?.user)
+    })
 
     socket.on("created channel", (channel) => {
         socket.emit("created channel", channel);

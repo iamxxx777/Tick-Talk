@@ -7,7 +7,6 @@ const getMessages = async (req, res) => {
         const messages = await Message.find({});
         res.status(200).json(messages);
     } catch (error) {
-        console.error(error);
         res.status(500).json("Server Error");
     }
 }
@@ -28,22 +27,22 @@ const newMessage = async (req, res) => {
 
         const userExist = channel.members.includes(user._id);
 
-        if(!userExist) channel.members.push(user._id);
-        channel.messages.push(savedMessage._id);
+        var newMembers, newMessages;
 
-        await Channel.updateOne(
-            {id: data.currentChannel},
-            {
-                members: channel.members,
-                messages: channel.messages
-            }
-        );
+        if(!userExist) newMembers = [...channel.members, user._id]
+        newMessages = [...channel.messages, savedMessage._id]
+
+        await Channel.findByIdAndUpdate(data.currentChannel, {$set: {members: newMembers, messages: newMessages}}, {new: true})
 
         const populatedMessage = await Message.findById(savedMessage._id).populate('sender');
 
-        res.status(200).json(populatedMessage);
+        const response = {
+            message: populatedMessage,
+            user: !userExist ? user : null
+        }
+
+        res.status(200).json(response);
     } catch (error) {
-        console.error(error);
         res.status(500).json("Server Error");
     }
 }

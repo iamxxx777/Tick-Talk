@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const ChannelItem = ({ channel }) => {
+const ChannelItem = ({ channel, click }) => {
 
     const logo = (word) => {
         let words = word.split(" ");
@@ -14,12 +14,12 @@ const ChannelItem = ({ channel }) => {
     }
 
     return (
-        <Link to={channel._id === process.env.REACT_APP_WELCOME_ID ? "/" : `/channels/${channel._id}`}>
-           <div className="channel-item">
+        <button onClick={click} >
+           <Link to={channel._id === process.env.REACT_APP_WELCOME_ID ? "/" : `/channels/${channel._id}`} className="channel-item">
                <div>{logo(channel.name)}</div>
                <h3>{channel.name}</h3>
-           </div>  
-        </Link>
+           </Link>  
+        </button>
         
     )
 }
