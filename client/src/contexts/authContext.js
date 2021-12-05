@@ -12,9 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
 
-  const socket = io("http://localhost:5000", {
-    autoConnect: false
-  });
+  const socket = io({autoConnect: false});
 
   const basicSignup = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password)
