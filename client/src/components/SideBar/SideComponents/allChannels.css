@@ -28,12 +28,12 @@
 }
 
 .channels-head-buttons .side-close {
-    color: #db0812;
     width: 25px;
     height: 25px;
-    background: rgba(219, 8, 18, 0.3);
-    border: none;
+    background: #252329;
+    color: #FFF;
     font-size: 18px;
+    border-radius: 8px;
     padding-bottom: 2px;
 }
 

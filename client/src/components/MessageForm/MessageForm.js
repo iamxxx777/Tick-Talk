@@ -15,20 +15,19 @@ const MessageForm = ({ welcomeId }) => {
     const [loading, setLoading] = useState("")
 
     const sendMessage = async (e) => {
-        e.preventDefault();
-        socket.connect();
+        e.preventDefault()
+        socket.connect()
         try {
             setLoading(true)
-            const message = { uid: currentUser.uid, currentChannel: welcomeId ? welcomeId : id, msg };
-            const { data } = await axios.post("/api/messages", message);
-            socket.emit("message", {channel: data.channel, message: data.message});
+            const message = { uid: currentUser.uid, currentChannel: welcomeId ? welcomeId : id, msg }
+            const { data } = await axios.post("/api/messages", message)
+            socket.emit("message", {channel: data.message.channel, message: data.message})
 
-            if(data.user) socket.emit("new user", {channel: data.channel, user: data.user});
+            if(data.user) socket.emit("new user", {channel: data.message.channel, user: data.user})
 
             setMsg("")
             setLoading(false)
         } catch (error) {
-            console.error(error)
             setLoading(false)
             setError("Error sending msg")
         }

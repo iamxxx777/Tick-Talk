@@ -30,8 +30,8 @@ const WelcomeScreen = () => {
     const fetchChannels = async () => {
         try {
             setLoading(true)
-            const { data } = await axios.get("/api/channels");
-            setChannels(data);
+            const { data } = await axios.get("/api/channels")
+            setChannels(data)
         } catch (error) {
             setError(true)
         }

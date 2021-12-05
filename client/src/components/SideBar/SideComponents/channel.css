@@ -23,11 +23,11 @@
 }
 
 .channel-head .side-close {
-    color: #db0812;
     width: 25px;
     height: 25px;
     border-radius: 8px;
     background: #252329;
+    color: #fff;
     border: none;
     font-size: 18px;
     padding-bottom: 3px;

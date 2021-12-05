@@ -21,7 +21,9 @@ const ProfileNav = () => {
         <header className="header">
             <nav>
                 <div className="logo">
-                    <img src={logo} alt="logo" />
+                    <Link to="/">
+                        <img src={logo} alt="logo" />
+                    </Link>
                 </div>
 
                 <div className="nav-user">

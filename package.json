@@ -1,12 +1,16 @@
 {
-  "name": "Tick Talk",
+  "name": "tick talk",
   "version": "1.0.0",
   "description": "Chat Application built using react and express, powered by socket.io",
   "main": "server.js",
+  "engines": {
+    "node": "17.x"
+  },
   "scripts": {
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [
     "React",

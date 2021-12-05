@@ -4,16 +4,23 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require('cors');
+const helmet = require('helmet');
 
 const app = express();
 const httpServer = http.createServer(app);
 
-const io = new Server(httpServer, {
-    cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST", "PUT"]
-    }
-});
+let io;
+
+if(process.env.NODE_ENV === "development") {
+    io = new Server(httpServer, {
+        cors: {
+            origin: "http://localhost:3000",
+            methods: ["GET", "POST", "PUT"]
+        }
+    })
+} else {
+    io = new Server(httpServer)
+}
 
 io.on('connection', (socket) => {
     socket.on("join channel", (channel) => {
@@ -38,7 +45,7 @@ io.on('connection', (socket) => {
     });
 })
 
-const { connectDB }= require("./config/connectDB");
+const { connectDB } = require("./config/connectDB");
 const profileRoute = require("./routes/profileRoute");
 const messagesRoute = require("./routes/messagesRoute");
 const channelsRoute = require("./routes/channelsRoute");
@@ -46,12 +53,25 @@ const channelsRoute = require("./routes/channelsRoute");
 connectDB();
 
 app.use(cors())
+app.use(helmet())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/profile", profileRoute);
 app.use("/api/messages", messagesRoute);
 app.use("/api/channels", channelsRoute);
+
+
+const __currentDirectory = path.resolve();
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__currentDirectory, '/client/build')));
+
+  app.get('/*', function (req, res) {
+    res.sendFile(path.resolve(__currentDirectory, 'client', 'build', 'index.html'));
+  });
+}
+
 
 const port = process.env.PORT || 5000;
 

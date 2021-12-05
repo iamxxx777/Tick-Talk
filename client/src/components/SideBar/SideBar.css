@@ -11,12 +11,10 @@
     z-index: 5;
 }
 
-
 .show-sidebar {
     display: initial;
     transform: translateX(0);
 }
-
 
 @media (min-width: 768px) {
     .sidebar {
