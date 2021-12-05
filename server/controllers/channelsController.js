@@ -23,7 +23,6 @@ const createChannel = async (req, res) => {
             res.status(200).json(channel);      
         }
     } catch(error) {
-        console.error(error);
         res.status(500).json('Server error');
     }
     
@@ -34,7 +33,7 @@ const getChannel = async (req, res) => {
         const id = req.params.id;
 
         if(!id) {
-            res.status(400).json("id not specified");
+            res.status(400).json("id is not specified");
         } else {
             const data = await Channel.findById(id)
                                 .populate('members', 'name photo')
@@ -46,32 +45,11 @@ const getChannel = async (req, res) => {
         }
         
     } catch (error) {
-        console.error(error);
-        res.status(500).json("Server error");
+        res.status(500).json("Server error")
     }
     
 }
 
-
-// const getWelcomeChannel = async (req, res) => {
-//     try {
-//         const name = "Welcome Channel";
-//         const data = await Channel.findOne({name})
-//                             .populate('members', 'name photo')
-//                             .populate('messages');
-        
-//         console.log(data);
-        
-        
-//         const channel = await Profile.populate(data, { path: "messages.sender" });
-
-//         res.status(200).json(channel);
-        
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json("Server error");
-//     }
-// }
 
 const getAllChannels = async (req, res) => {
     try {
@@ -83,7 +61,6 @@ const getAllChannels = async (req, res) => {
 
         res.status(200).json(channels);
     } catch (error) {
-        console.error(error);
         res.status(500).json("Server error");
     }
 }

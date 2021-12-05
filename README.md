@@ -1,4 +1,4 @@
-<h1 align="center">Chatter Box</h1>
+<h1 align="center">Tick Talk</h1>
 
 
 <div align="center">
@@ -7,7 +7,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/iamxxx777/tick-talk">
       Solution
     </a>
   </h3>
@@ -30,14 +30,12 @@
 
 ![screenshot](https://res.cloudinary.com/iamxxx777/image/upload/v1638619390/Chatter_Box_yq3ek6.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
 
 ### Built With
+
+This chat application is built with a react front-end and an express backend. The real-time chat processing is powered by Socket.io which provides seemless exchange of information between users. The authentication is handled by firebase and the users information is stored in a mongoDb atlas, along with the messages and channels.
+
+This app allows users to login with their facebook, google or github account and it also allows for the traditional email and password signup. Users are added to the welcome channel when they sign up, users can proceed to create a new channel or join the existing channels.
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
@@ -45,12 +43,18 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 - [Socket.io](https://socket.io/)
 - [MongoDB](https://mongodb.com/)
 - [Express](https://expressjs.com/)
+- [cloudinary](https://cloudinary.com/)
+- [Firebase](https://firebase.google.com/)
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/UgCqszKR7Q7oqb4kRfI0) was to build an application to complete the given user stories.
+- Users on successful login are routed to the Welcome channel
+- Users can create a new channel with a name and a description
+- Users can select a channel of their choice
+- When a user selects a channel, They are added as a member of the channel
+- Users can see a member of the channel
+- Users can send a message
+- Users can see other people's messages
 
 ## How To Use
 
@@ -60,7 +64,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/Chatter-Box
+$ git clone https://github.com/iamxxx777/Tick-Talk
 
 # Install dependencies
 $ npm install
@@ -71,11 +75,8 @@ $ npm start
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
+- [Socket.io docs](https://socket.io/docs/v4/client-initialization/)
 - [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 

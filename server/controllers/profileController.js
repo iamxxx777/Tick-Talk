@@ -6,7 +6,6 @@ const getAllProfiles = async (req, res) => {
         const users = await Profile.find({});
         res.status(200).json(users);
     } catch (error) {
-        console.error(error);
         res.status(500).json({err: "Server Error"});
     }
 }
@@ -18,7 +17,6 @@ const getProfile = async (req, res) => {
         const user = await Profile.findOne({fireId: id});
         res.status(200).json(user);
     } catch (error) {
-        console.error(error);
         res.status(500).json({err: "Server Error"});
     }
 }
@@ -40,14 +38,14 @@ const createProfile = async (req, res) => {
             res.status(201).json({photo: newProfile.photo});
         }
     } catch (error) {
-        console.error(error);
         res.status(500).json({err: "Server Error"});
     }
 }
 
 const updateProfile = async (req, res) => {
     try {
-        const { id, ...data } = req.body;
+        const id = req.params.id;
+        const data = req.body;
         const user = await Profile.findById(id);
 
         if(!user) {
@@ -64,7 +62,7 @@ const updateProfile = async (req, res) => {
         });
 
     } catch(error) {
-
+        res.status(500).json({err: "Server Error"});
     }
 }
 

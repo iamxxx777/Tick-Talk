@@ -8,7 +8,7 @@ router.get("/:id", getProfile);
 
 router.post("/", createProfile);
 
-router.put("/", updateProfile);
+router.put("/:id", updateProfile);
 
 router.put("/image", upload.single("image"), updateImage)
 

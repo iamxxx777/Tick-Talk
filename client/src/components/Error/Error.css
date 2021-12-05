@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100%;
     padding: 2rem 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .err_container::-webkit-scrollbar {

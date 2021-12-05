@@ -1,5 +1,5 @@
 {
-  "name": "sayhola",
+  "name": "Tick Talk",
   "version": "1.0.0",
   "description": "Chat Application built using react and express, powered by socket.io",
   "main": "server.js",
@@ -12,7 +12,9 @@
     "React",
     "Express",
     "Socket.io",
-    "MongoDB"
+    "MongoDB",
+    "Firebase",
+    "cloudinary"
   ],
   "author": "Dayo-ajobiewe Hope",
   "license": "MIT",

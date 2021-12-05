@@ -28,6 +28,7 @@ const EditProfile = () => {
     const [loadError, setLoadError] = useState(false);
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(false);
+    const [formLoading, setFormLoading] = useState(false);
 
     var promises = [];
 
@@ -60,13 +61,9 @@ const EditProfile = () => {
                 }
             };
 
-            setLoading(true);
-
             const { data } = await axios.put("/api/profile/image", formData, config);
 
             await updatePhoto(data.url);
-
-            setLoading(false);
 
             if(data.success) {
                 await updateUser();
@@ -79,7 +76,7 @@ const EditProfile = () => {
     }
 
     const handleForm = async (editData) => {
-        const { data } = await axios.put("/api/profile", editData);
+        const { data } = await axios.put(`/api/profile/${user._id}`, editData);
         return data;
     } 
 
@@ -104,25 +101,26 @@ const EditProfile = () => {
                 promises.push(updateName(name));
             }
 
-            const data = { id: currentUser.uid, name, email, bio, phone };
+            const data = { name, email, bio, phone };
 
             promises.push(handleForm(data));
 
-            setLoading(true);
+            setFormLoading(true);
 
             Promise.all(promises)
                     .then(() => {
-                        history.push("/profile");
+                        history.push("/profile")
                     })
                     .catch(() => {
                         setError("Failed to update account")
                     })
                     .finally(() => {
-                        setLoading(false)
+                        setFormLoading(false)
                     });
 
         } catch (error) {
             setError(error.response.data.error);
+            setFormLoading(false);
         }
         
     }
@@ -253,7 +251,10 @@ const EditProfile = () => {
                                             type="password" name="password2" placeholder="Leave blank to keep the same" />
                                     </div>
 
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" 
+                                        style={formLoading ? {pointerEvents: "none"} : null}>
+                                        {formLoading ? <i className="fa fa-spinner" aria-hidden="true"></i> : "Submit"}
+                                    </button>
                                 </form>
                             </div>
                         </section>

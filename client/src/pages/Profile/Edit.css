@@ -117,7 +117,7 @@
 }
 
 .form_img_div input {
-display: none;
+    display: none;
 }
 
 .img_text p {
@@ -167,7 +167,7 @@ display: none;
     font-size: 13px;
 }
 
-.form_control textarea {
+.profile_edit .form_control textarea {
     height: 92px;
     padding: 1rem;
     resize: none;
