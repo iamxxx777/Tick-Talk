@@ -26,8 +26,9 @@ const createProfile = async (req, res) => {
 
     const schema = {
         fireId: user.uid,
-        name: name,
-        email: user.email
+        name: user.displayName || name,
+        email: user.email,
+        photo: user.photoURL
     }
 
     try {

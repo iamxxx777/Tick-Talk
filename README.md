@@ -3,7 +3,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://tick-talk.herokuapp.com">
       Demo
     </a>
     <span> | </span>
@@ -36,6 +36,7 @@
 This chat application is built with a react front-end and an express backend. The real-time chat processing is powered by Socket.io which provides seemless exchange of information between users. The authentication is handled by firebase and the users information is stored in a mongoDb atlas, along with the messages and channels.
 
 This app allows users to login with their facebook, google or github account and it also allows for the traditional email and password signup. Users are added to the welcome channel when they sign up, users can proceed to create a new channel or join the existing channels.
+
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
