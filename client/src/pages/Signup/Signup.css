@@ -56,9 +56,7 @@
 }
 
 .error-msg {
-    margin-bottom: 0.5rem;
     color: #D8000C;
-    background-color: #FFD2D2;
     padding: 0.4rem;
     width: 100%;
     text-align: left;
