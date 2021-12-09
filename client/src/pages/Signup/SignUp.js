@@ -32,7 +32,7 @@ const SignUp = () => {
                     </div>
 
                     <div className="or">
-                        <p>Dont have an account yet? <Link to="/login">Register</Link></p>
+                        <p>Already a user? <Link to="/login">Login</Link></p>
                     </div>
                 </div>
             </section>
