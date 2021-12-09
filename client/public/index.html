@@ -11,13 +11,14 @@
     />
     <meta 
       http-equiv="Content-Security-Policy" 
-      content="script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.firebase.com https://www.gstatic.com https://*.firebaseio.com https://*.firebaseio.com;
-               object-src 'self';
-               connect-src 'self' 'unsafe-inline' 'unsafe-eval' https://googleapis.com https://*.googleapis.com https://www.gstatic.com ; "
+      content="default-src 'self' data: gap: ssl.gstatic.com 'unsafe-eval' 'unsafe-inline';
+               style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: ;" 
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
-      
+      content="script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.firebase.com https://www.gstatic.com https://*.firebaseio.com https://*.firebaseio.com;
+               object-src 'self';
+               connect-src 'self' 'unsafe-inline' 'unsafe-eval' https://googleapis.com https://*.googleapis.com https://www.gstatic.com ; "
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
