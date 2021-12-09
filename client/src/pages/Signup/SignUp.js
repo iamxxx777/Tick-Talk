@@ -15,7 +15,7 @@ const SignUp = () => {
                 <div className="signup_logo">
                     <img src={Logo} alt="logo" />
                 </div>
-                <h1>Sign Up to Chatterbox </h1>
+                <h1>Sign Up to Tick Talk </h1>
                 <p>
                     Connect with people from all walks of life and engage in spirited conversations.
                 </p>

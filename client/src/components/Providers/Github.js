@@ -17,7 +17,7 @@ const Github = () => {
         try {
             const userAuth = await providerSignIn(provider);
 
-            await axios.post("/auth/register", {
+            await axios.post("/api/profile", {
                 user: userAuth.user,
             })
             history.push("/");
