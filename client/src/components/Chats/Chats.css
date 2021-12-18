@@ -90,6 +90,6 @@
         padding: 3rem 2rem;
     }
     .chat-box::-webkit-scrollbar {
-        width: 15px;
+        width: 12px;
     }
 }

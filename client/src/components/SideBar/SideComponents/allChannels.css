@@ -76,6 +76,11 @@
     color: #fff;
 }
 
+.channels-list {
+    display: flex;
+    flex-direction: column;
+}
+
 .channel-item {
     display: flex;
     justify-content: flex-start;
