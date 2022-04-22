@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(18, 15, 19, 0.5);
+    background: rgba(18, 15, 19, 0.7);
     padding: 1rem;
     z-index: 10;
 }

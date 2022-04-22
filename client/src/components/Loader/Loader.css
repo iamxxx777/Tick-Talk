@@ -8,10 +8,10 @@
 
 .loader-item {
   position: absolute;
-  top: calc(50% - 40px);
-  left: calc(50% - 40px);
-  width: 80px;
-  height: 80px;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   perspective: 800px;
 }
@@ -69,15 +69,5 @@
   }
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-  }
-}
-
-
-@media (min-width: 800px) {
-  .loader-item {
-    top: calc(50% - 60px);
-    left: calc(50% - 60px);
-    width: 120px;
-    height: 120px;
   }
 }

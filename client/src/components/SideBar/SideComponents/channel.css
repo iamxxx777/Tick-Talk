@@ -50,7 +50,7 @@
 
 .channel-about h1 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     text-transform: uppercase;
     color: #E0E0E0;
@@ -59,17 +59,16 @@
 
 .channel-about p {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
-    letter-spacing: -0.035em;
+    letter-spacing: 0.035em;
     color: #E0E0E0;
 }
 
 
-
 .channel-members h2 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -77,25 +76,26 @@
 }
 
 .channel-member {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    gap: 15px;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .channel-member img {
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     object-fit: contain;
+    margin-right: 0.7rem;
 }
 
 .channel-member h3 {
     font-weight: 600;
-    font-size: 17px;
-    line-height: 25px;
-    letter-spacing: -0.035em;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: 0.015em;
+    text-transform: capitalize;
     color: #828282;
 }
 

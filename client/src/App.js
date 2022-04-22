@@ -12,7 +12,7 @@ import EditProfile from "./pages/Profile/EditProfile";
 import ChatScreen from "./pages/Chat/ChatsScreen";
 import WelcomeScreen from "./pages/Welcome/WelcomeScreen";
 import NotFound from "./pages/NotFound/NotFound"
-
+import Error from './components/Error/Error'
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={SignUp} />
             <Route path="/404" component={NotFound} />
+            <Route path='/err' component={Error} />
             <Redirect from="*" to="/404" />
           </Switch>
         </div>

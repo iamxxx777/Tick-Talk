@@ -19,8 +19,8 @@
     }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1150px) {
     .chat {
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1.1fr 4fr;
     }
 }

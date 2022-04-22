@@ -8,7 +8,7 @@
 }
 
 .channels-head h2 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.035em;
@@ -104,27 +104,18 @@
 .channel-item h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
-    line-height: 25px;
-    letter-spacing: -0.035em;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+    text-align: left;
     text-transform: uppercase;
     margin-left: 8px;
 }
 
-@media (min-width: 1000px) {
-    .channel-item h3 {
-        font-size: 15px;
-        line-height: 22px;
-    }
-}
 
 
 @media (min-width: 768px) {
     .side-close {
         display: none;
-    }
-    .channel-item h3 {
-        font-size: 14px;
-        line-height: 22px;
     }
 }

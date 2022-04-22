@@ -41,9 +41,9 @@ const MessageForm = ({ welcomeId }) => {
                     value={msg}
                     onChange={(e) => setMsg(e.target.value)}
                     placeholder="Type a message here" 
-                    maxLength={250}
+                    maxLength={1000}
                 ></textarea>
-                <button type="submit">
+                <button type="submit" style={msg.length ? {} : {pointerEvents: 'none', backgroundColor: '#828282'}}>
                     {loading ? 
                         <i className="fa fa-spinner spin" aria-hidden="true"></i> : 
                         <i className="fa fa-paper-plane" aria-hidden="true"></i>
